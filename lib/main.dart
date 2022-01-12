@@ -1,20 +1,18 @@
 
 
+import 'package:bloc/bloc.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fruit_ecommerce/googlemap/google_map.dart';
-import 'package:fruit_ecommerce/layout/market_Screen.dart';
-import 'package:fruit_ecommerce/modules/addvisacard/add_your_card.dart';
-import 'package:fruit_ecommerce/modules/introduction/introductionscreen/intro_Screen.dart';
-import 'package:fruit_ecommerce/modules/introduction/splashscreen/Splash_Screen.dart';
-import 'package:fruit_ecommerce/modules/login/login_screen.dart';
-import 'package:fruit_ecommerce/shared/bloc_observer.dart';
-import 'package:fruit_ecommerce/shared/cubit/cubit.dart';
-import 'package:fruit_ecommerce/shared/cubit/states.dart';
-import 'package:fruit_ecommerce/shared/network/local/cache_helper.dart';
-import 'package:fruit_ecommerce/style/theme_data.dart';
-import 'package:introduction_screen/introduction_screen.dart';
+import 'package:fruit_ecommerce/view/layout/market_Screen.dart';
+
+import 'services/CacheHelper/cache_helper.dart';
+import 'view/addvisacard/add_your_card.dart';
+import 'view/introduction/splashscreen/Splash_Screen.dart';
+import 'view/themedata/theme_data.dart';
+import 'view_model/AppCupit/cubit.dart';
+import 'view_model/AppStates/states.dart';
+import 'view_model/bloc_observer.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
