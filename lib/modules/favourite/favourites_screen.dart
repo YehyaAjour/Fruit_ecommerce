@@ -68,7 +68,7 @@ class FavouriteScreen extends StatelessWidget {
                               width: 95,
                               height: 95,
                               child: Image.asset(
-                                  "assets/images/Component 2 – 1dsa.png")),
+                                  AppCubit.get(context).imgOrganicFruit[i])),
                           SizedBox(
                             width: 10,
                           ),
@@ -211,7 +211,7 @@ class FavouriteScreen extends StatelessWidget {
                       ),
                     );
                   },
-                  itemCount: 15),
+                  itemCount: AppCubit.get(context).imgOrganicFruit.length),
             )
           ],
         );

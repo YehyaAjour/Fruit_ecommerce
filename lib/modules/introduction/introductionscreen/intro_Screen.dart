@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fruit_ecommerce/modules/login/login_screen.dart';
 import 'package:fruit_ecommerce/shared/components/components.dart';
+import 'package:hexcolor/hexcolor.dart';
 
 import 'package:introduction_screen/introduction_screen.dart';
 
@@ -33,7 +34,7 @@ class _IntroScreenState extends State<IntroScreen> {
       titleTextStyle: TextStyle(fontSize: 28.0, fontWeight: FontWeight.w700),
       bodyTextStyle: bodyStyle,
       descriptionPadding: EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 16.0),
-      pageColor: Colors.white,
+      pageColor:  Colors.white,
       imagePadding: EdgeInsets.zero,
     );
 

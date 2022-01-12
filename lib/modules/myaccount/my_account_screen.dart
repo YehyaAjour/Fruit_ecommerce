@@ -6,7 +6,7 @@ import 'package:fruit_ecommerce/modules/myorder/my_order_screen.dart';
 import 'package:fruit_ecommerce/modules/setting/setting_screen.dart';
 import 'package:fruit_ecommerce/shared/components/components.dart';
 import 'package:fruit_ecommerce/shared/cubit/cubit.dart';
-
+import 'package:fruit_ecommerce/shared/network/local/cache_helper.dart';
 
 
 class MyAccountScreen extends StatelessWidget {
@@ -117,8 +117,10 @@ class MyAccountScreen extends StatelessWidget {
                     labelName: "Log Out",
                     iconData: Icons.logout,
                     function: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => LoginPage()));
+                      CacheHelper.removeData(key: 'uId').then((value) =>
+                          Navigator.push(context,
+                              MaterialPageRoute(
+                                  builder: (context) => LoginPage())));
                     }),
               ],
             ),

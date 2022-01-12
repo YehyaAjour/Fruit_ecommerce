@@ -100,7 +100,7 @@ class _AddYourCardState extends State<AddYourCard> {
                     Text(
                       "Cardholder Name",
                       style: TextStyle(
-                          color: Color(0xffB1B1B1),
+                          color: Colors.black,
                           fontSize: 12,
                           fontWeight: FontWeight.normal),
                     ),
@@ -111,7 +111,7 @@ class _AddYourCardState extends State<AddYourCard> {
                       containerWidth: double.infinity,
                       onChangeFun: (value) {
                         setState(() {
-                          cardHolderName = value;
+                          cardHolderName = 'Mr.'+value;
                         });
                       },
                     ),
@@ -121,7 +121,7 @@ class _AddYourCardState extends State<AddYourCard> {
                     Text(
                       "Card Number",
                       style: TextStyle(
-                          color: Color(0xffB1B1B1),
+                          color: Colors.black,
                           fontSize: 12,
                           fontWeight: FontWeight.normal),
                     ),
@@ -187,7 +187,7 @@ class _AddYourCardState extends State<AddYourCard> {
                     Text(
                       "Valid Thru",
                       style: TextStyle(
-                          color: Color(0xffB1B1B1),
+                          color: Colors.black,
                           fontSize: 12,
                           fontWeight: FontWeight.normal),
                     ),
@@ -208,7 +208,7 @@ class _AddYourCardState extends State<AddYourCard> {
                     Text(
                       "CVV/CVC",
                       style: TextStyle(
-                          color: Color(0xffB1B1B1),
+                          color: Colors.black,
                           fontSize: 12,
                           fontWeight: FontWeight.normal),
                     ),
@@ -232,7 +232,7 @@ class _AddYourCardState extends State<AddYourCard> {
                         Text(
                           "3 or 4 digit code",
                           style: TextStyle(
-                              color: Color(0xffB1B1B1),
+                              color: Colors.black,
                               fontSize: 12,
                               fontWeight: FontWeight.normal),
                         )

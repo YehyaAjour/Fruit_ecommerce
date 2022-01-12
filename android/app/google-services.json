@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "932290928049",
+    "project_id": "fruitapp-268de",
+    "storage_bucket": "fruitapp-268de.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:932290928049:android:e546b796c62e0637187190",
+        "android_client_info": {
+          "package_name": "com.example.fruit_ecommerce"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "932290928049-mic6ntgl3fe67ebmk565iog694f385vr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.fruit_ecommerce",
+            "certificate_hash": "f693e436609ebdcc0d6f05422c8032b49f22b0dc"
+          }
+        },
+        {
+          "client_id": "932290928049-46cd4u47fbmoovklk993n0k3kt7oug9v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCEXjH5FFaKiSYm0jvCEtQtNJ_CawB3cJI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "932290928049-46cd4u47fbmoovklk993n0k3kt7oug9v.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "932290928049-9hdg7hath04a1k6vt9cgj8fk2n944kpn.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.fruitmarket"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

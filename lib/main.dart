@@ -3,13 +3,18 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fruit_ecommerce/googlemap/google_map.dart';
 import 'package:fruit_ecommerce/layout/market_Screen.dart';
+import 'package:fruit_ecommerce/modules/addvisacard/add_your_card.dart';
+import 'package:fruit_ecommerce/modules/introduction/introductionscreen/intro_Screen.dart';
+import 'package:fruit_ecommerce/modules/introduction/splashscreen/Splash_Screen.dart';
 import 'package:fruit_ecommerce/modules/login/login_screen.dart';
 import 'package:fruit_ecommerce/shared/bloc_observer.dart';
 import 'package:fruit_ecommerce/shared/cubit/cubit.dart';
 import 'package:fruit_ecommerce/shared/cubit/states.dart';
 import 'package:fruit_ecommerce/shared/network/local/cache_helper.dart';
 import 'package:fruit_ecommerce/style/theme_data.dart';
+import 'package:introduction_screen/introduction_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -29,7 +34,7 @@ void main() async {
   if (uId != null) {
     widget = MarketScreen();
   } else {
-    widget = LoginPage();
+    widget = SplashScreen();
   }
 
   runApp(MyApp(
@@ -48,7 +53,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => AppCubit()..changeTheme(fromShared: isDark),
+      create: (context) => AppCubit()..changeTheme(fromShared: isDark)..getVegetables(),
       child: BlocConsumer<AppCubit, AppState>(
           listener: (context, state) {},
           builder: (context, state) {
@@ -61,7 +66,7 @@ class MyApp extends StatelessWidget {
                   : ThemeMode.light,
               debugShowCheckedModeBanner: false,
               title: 'Flutter Demo',
-              home: MarketScreen(),
+              home: AddYourCard(),
             );
           }),
     );

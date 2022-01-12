@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:fruit_ecommerce/model/vegetables_model.dart';
+import 'package:fruit_ecommerce/shared/cubit/cubit.dart';
 
 Widget defaultTextFormField({
   @required TextEditingController controller,
@@ -163,7 +165,7 @@ Widget buildItem({
                   allowHalfRating: false,
                   itemCount: 5,
                   // itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
-                  itemSize: 20,
+                  itemSize: 15,
                   itemBuilder: (context, _) => Icon(
                     Icons.star,
                     color: Colors.amber,
@@ -197,7 +199,7 @@ Widget fruitTitle(context) {
         child: Row(
           children: [
             Text(
-              "Organic Fruits",
+              "AppCubit.get(context).vegetables[index].fruit_type",
               style: Theme.of(context).textTheme.bodyText1,
             ),
             SizedBox(
@@ -277,14 +279,25 @@ Widget textFormFiledVisa(
     height: 45,
     child: TextFormField(
       style: TextStyle(
+        color: Colors.black,
         fontSize: 15,
       ),
       decoration: InputDecoration(
-          border: OutlineInputBorder(borderRadius: BorderRadius.circular(7)),
+          enabledBorder: new OutlineInputBorder(
+            borderRadius: new BorderRadius.circular(25.0),
+            borderSide:  BorderSide(color: Colors.black ),
+
+          ),
+          focusedBorder: new OutlineInputBorder(
+            borderRadius: new BorderRadius.circular(25.0),
+            borderSide:  BorderSide(color: Color(0xff69A03A) ),
+
+          ),
+          border: OutlineInputBorder(borderRadius: BorderRadius.circular(7),),
           counterText: ""),
       onChanged: onChangeFun,
       focusNode: focusnode != null ? focusnode : null,
-      maxLength: 4,
+     // maxLength: 10,
     ),
   );
 }

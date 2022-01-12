@@ -6,7 +6,7 @@ ThemeData darkTheme() {
   return ThemeData(
       textTheme: TextTheme(
         bodyText1: TextStyle(
-            fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),
+            fontSize: 15, fontWeight: FontWeight.bold, color: Colors.white),
         caption: TextStyle(
             fontSize: 12,
             fontWeight: FontWeight.bold,
@@ -35,7 +35,7 @@ ThemeData lightTheme() {
   return ThemeData(
       textTheme: TextTheme(
         bodyText1: TextStyle(
-            fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black),
+            fontSize: 15, fontWeight: FontWeight.bold, color: Colors.black),
         caption: TextStyle(
             fontSize: 12,
             fontWeight: FontWeight.bold,

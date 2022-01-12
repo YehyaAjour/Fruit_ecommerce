@@ -43,3 +43,8 @@ class LoginErrorState extends AppState {
 }
 
 class ChangeThemeState extends AppState {}
+
+
+class GetVegetablesLoadingState extends AppState{}
+class GetVegetablesSuccessState extends AppState{}
+class GetVegetablesErrorState extends AppState{}

@@ -1,8 +1,11 @@
+import 'dart:math';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruit_ecommerce/model/user_model.dart';
+import 'package:fruit_ecommerce/model/vegetables_model.dart';
 import 'package:fruit_ecommerce/modules/favourite/favourites_screen.dart';
 import 'package:fruit_ecommerce/modules/home/home_screen.dart';
 import 'package:fruit_ecommerce/modules/myaccount/my_account_screen.dart';
@@ -16,11 +19,10 @@ class AppCubit extends Cubit<AppState> {
 
   static AppCubit get(context) => BlocProvider.of(context);
 
-  void userRegister(
-      {@required String name,
-      @required String email,
-      @required String password,
-      @required String phone}) {
+  void userRegister({@required String name,
+    @required String email,
+    @required String password,
+    @required String phone}) {
     emit(RegisterLoadingState());
     FirebaseAuth.instance
         .createUserWithEmailAndPassword(email: email, password: password)
@@ -37,7 +39,7 @@ class AppCubit extends Cubit<AppState> {
   void userCreateAfterRegister(
       {@required name, @required email, @required phone, @required uId}) {
     UserModel model =
-        UserModel(name: name, email: email, phone: phone, uId: uId);
+    UserModel(name: name, email: email, phone: phone, uId: uId);
 
     FirebaseFirestore.instance
         .collection("user")
@@ -62,6 +64,32 @@ class AppCubit extends Cubit<AppState> {
       emit(LoginErrorState(error.toString()));
     });
   }
+  List<String> imgOrganicFruit = [
+    'assets/images/strawbary1.png',
+    'assets/images/grapez1.png',
+    'assets/images/orang1.png',
+    'assets/images/multifruitPack2.png',
+    'assets/images/paperFruitPack.png',
+    'assets/images/tropicana2.png'
+  ];
+  List<VegetablesModel> vegetables = [];
+
+  void getVegetables() {
+    emit(GetVegetablesLoadingState());
+    FirebaseFirestore.instance.collection('vegetables')
+        .get()
+        .then((value) {
+      value.docs.forEach((element) {
+        vegetables.add(VegetablesModel.fromJson(element.data()));
+      }
+      );
+      emit(GetVegetablesSuccessState());
+        }
+    ).catchError((e) {
+      emit(GetVegetablesErrorState());
+    });
+  }
+
 
   IconData suffix = Icons.visibility;
   bool isPassword = true;
